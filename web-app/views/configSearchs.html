@@ -1,0 +1,63 @@
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div class="page-header">
+		<h3>
+			<i class="fa fa-search"></i> Busquedas <small> <i
+				class="fa fa-angle-double-right"></i> Gestione sus busquedas
+			</small>
+		</h3>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Configuración de Busquedas</div>
+				<div class="panel-body">
+					<button class="btn btn-primary" ng-click="search.addSearch()">
+						<i class="fa fa-plus-circle fa-lg"></i> Agregar
+					</button>
+				</div>
+				<table ng-table="search.tableParams" class="table table-hover table-condensed table-striped table-bordered text-center">
+                 <tbody>
+					<tr ng-repeat="item in $data">
+					    <td data-title="'#'">{{$index+1}}</td>
+						<td data-title="'Texto'">
+							<span editable-text="item.name" e-name="name" e-form="rowform" e-required> 
+							{{ item.name || '....' }} 
+							</span>
+						</td>
+
+						<td style="white-space: nowrap" data-title="'Configuración'">
+							<!-- form -->
+							<form editable-form name="rowform"
+								onbeforesave="search.saveSearch($data, item.id)"
+								ng-show="rowform.$visible" class="form-buttons form-inline"
+								shown="inserted == item">
+								<button type="submit" ng-disabled="rowform.$waiting"
+									class="btn btn-primary">
+									<i class="fa fa-check fa-lg"></i>
+								</button>
+								<button type="button" ng-disabled="rowform.$waiting"
+									ng-click="rowform.$cancel()" class="btn btn-default">
+									<i class="fa fa-times-circle fa-lg"></i>
+								</button>
+							</form>
+							<div class="buttons" ng-show="!rowform.$visible">
+								<button class="btn btn-primary" ng-click="rowform.$show()">
+									<i class="fa fa-pencil-square-o fa-lg"></i>
+								</button>
+								<button class="btn btn-danger"
+									ng-click="search.removeSearch($index,item.id)">
+									<i class="fa fa-trash-o fa-lg"></i>
+								</button>
+							</div>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</div>
+</div>
+

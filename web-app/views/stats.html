@@ -1,0 +1,97 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+	<div class="page-header">
+		<h3>
+			<i class=" fa fa-bar-chart-o"></i> Gráficos <small> <i
+				class="fa fa-angle-double-right"></i> Estadísticas Generales
+			</small>
+		</h3>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default widget-box widget-ml">
+				<div class="panel-heading widget-header">
+				<h5 class="widget-title">
+				<i class="fa-lg fa fa-bar-chart"> </i>
+				<label >Histograma de ventas por usuarios</label>
+			</h5>
+				
+				</div>
+				<div class="panel-body widget-body">
+				<div class="widget-main">
+				<highchart  config="stats.histogramSales" class="col-sm-12"></highchart>
+				</div>
+				</div>
+			</div>
+		</div>
+				<div class="col-sm-12">
+			<div class="panel panel-default widget-box widget-ml">
+				<div class="panel-heading widget-header">
+				<h5 class="widget-title">
+				<i class="fa-lg fa fa-pie-chart"> </i>
+				<label >Cantidad de vendedores distintos en la primer página</label>
+			</h5>
+				
+				</div>
+				<div class="panel-body widget-body">
+				<div class="widget-main">
+				<div id="usersQuantity" class="col-sm-12" >
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+	<div class="col-sm-12">
+			<div class="panel panel-default widget-box widget-ml">
+				<div class="panel-heading widget-header">
+				<h5 class="widget-title">
+				<i class="fa-lg fa fa-pie-chart"> </i>
+				<label >Cantidad de Productos por Categoria</label>
+			</h5>
+				
+				</div>
+				<div class="panel-body widget-body">
+				<div class="widget-main">
+				<highchart  config="stats.quantityXCategory" class="col-sm-12"></highchart>
+				</div>
+				</div>
+			</div>
+		</div>
+	<div class="col-sm-12">
+			<div class="panel panel-default widget-box widget-ml">
+				<div class="panel-heading widget-header">
+				<h5 class="widget-title">
+				<i class="fa-lg fa fa-users"> </i>
+				<label >Top ten Mejores vendedores</label>
+			</h5>
+				
+				</div>
+				<div class="panel-body widget-body">
+				<div class="widget-main">
+				<table class="table table-hover table-condensed table-striped table-bordered text-center">
+				<thead>
+				 <tr><th class="text-center">Nombre </th><th class="text-center">Este vendedor es </th>
+				 <th class="text-center"> Recomendaciones Positivas </th> 
+				 <th class="text-center">Ventas en la busqueda</th>
+				 <th class="text-center">Ventas totales</th>
+				 <th class="text-center">Ver Perfil</th> </tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="seller in stats.bestSellers">
+				<td>{{seller.name}}</td><td>{{seller.status}}</td><td>{{seller.review}}%</td><td>{{seller.searchSales}}</td>
+				<td> {{seller.totalSales}} </td>
+				<td> <a href="{{seller.link}}" target="_blanck">
+					<i class="fa fa-external-link fa-lg"></i>
+					</a> 
+				</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal-header">
+	<h3 class="modal-title">Nueva Busqueda</h3>
+</div>
+<form  name="myForm" novalidate>
+<div class="modal-body">
+	
+		<div class="form-group">
+			<label  >Ingrese Busqueda</label>
+			<div >
+				<input type="text" name="search" class="form-control" 
+				required="" ng-model="search" placeholder="busqueda">
+			</div>
+		</div>
+		
+	</div>
+<div class="modal-footer">
+	<button ng-show="!myForm.search.$error.required" class="btn btn-primary" type="submit"  ng-click="ok()"> <i class="fa fa-check fa-lg"></i></button>
+	<button class="btn btn-warning" type="button" ng-click="cancel()"><i class="fa fa-times-circle fa-lg"></i></button>
+</div>
+</form>
