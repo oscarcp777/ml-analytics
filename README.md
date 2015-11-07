@@ -1,3 +1,17 @@
+Para acceder a la app andando
+user1: oscar.cp
+pass1: pass
+user2:julian.klas
+pass2:pass
+
+Es una app grails 
+Seguridad : spring security para el login
+Frontend :  Bootstrap  para el maquetado font-awesome para los iconos, la lógica de las  vistas esta hecho con Angular  que consume servicios  rest. 
+Backend:  Es una api rest   que expone servicios en formato json,
+          En cada búsqueda se guarda la data como viene en mongo para después procesarla
+          Se guardan los indicadores una vez generados en mongo asi solo se procesa una vez
+base de datos : use mongo para guardar la data
+
 Ejercicio
 
 Este ejercicio consiste en hacer una pequeña aplicación web con el objetivo de evaluar conocimientos, capacidad de aprender y priorizar.
