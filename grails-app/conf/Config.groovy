@@ -155,6 +155,6 @@ grails.databinding.trimStrings = true
 grails.databinding.convertEmptyStringsToNull = true
 
 grails.plugins.springsecurity.facebook.domain.classname='com.ml.security.FacebookUser'
-grails.plugins.springsecurity.facebook.appId='1644649872457354'
-grails.plugins.springsecurity.facebook.secret='f24998c762e9786ffc14ec4d9580aced'
+grails.plugins.springsecurity.facebook.appId=''
+grails.plugins.springsecurity.facebook.secret=''
 grails.plugin.springsecurity.facebook.permissions='name,email,cover'
